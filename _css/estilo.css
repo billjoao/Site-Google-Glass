@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+/*O nome da font-family ja vem escrito, ali está Chakra+Petch, 0 "+" significa espaço*/
+
+@font-face {
+    font-family: 'FonteLogo';
+    src: url(../_fonts/bubblegum-sans-regular.otf);
+}
+
+p {
+    text-align: justify;
+    /*alinha o texto certionho dos dois lados*/
+    text-indent: 50px;
+    /*Deixa um espaço atntes de começar o paragrafo*/
+}
+
+header#cabecalho img#icone {
+    position: absolute;
+    left: 910px;
+    top: 100px;
+}
+
+header#cabecalho {
+    border-bottom: 1px black solid;
+    /*Faz a linha de divisao*/
+    height: 150px;
+    /*Ajusta a distancia ate o topo da pagina*/
+    background: url(../_imagens/glass-logo-peq.jpg) no-repeat 0px 80px;
+    /*Insere uma imagem para o background do header, e ela se repete até preencher tudo. Pra isso itilizar o no-repeat*/
+}
+
+header#cabecalho h1 {
+    font-family: 'FonteLogo', sans-serif;
+    font-size: 30pt;
+    color: rgb(182, 111, 248);
+    text-shadow: 1px 1px 1px black;
+    padding: 0px;
+    margin-bottom: 0px;
+    /*Altera a margem interna do objeto, na posiçao indicada*/
+    margin-top: 60px;
+}
+
+header#cabecalho h2 {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 15pt;
+    color: rgb(195, 132, 255);
+    padding: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+h2 {
+    text-align: left;
+    /*alinha o texto na esquerda*/
+}
+
+body {
+    background-color: rgb(182, 111, 248);
+    /*Muda a cor de fundo da pagina*/
+    color: rgb(0, 0, 0, );
+    /*muda a cor da fonte*/
+    font-family: Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(182, 111, 248);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+table#tabelaspec {
+    border: 1px solid black;
+    border-spacing: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table#tabelaspec td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+table#tabelaspec td.ce {
+    color: white;
+    background-color: rgb(182, 111, 248);
+    vertical-align: top;
+    font-weight: bold;
+}
+
+table#tabelaspec td.cd {
+    background-color: rgb(208, 161, 252);
+}
+
+table#tabelaspec caption {
+    color: rgb(182, 111, 248);
+    font-size: 15pt;
+    font-weight: bold;
+}
+
+table#tabelaspec caption span {
+    display: block;
+    float: right;
+    color: black;
+    font-size: 8pt;
+    margin-top: 20px;
+}
+
+div#interface {
+    width: 800px;
+    /*Muda o tamanho que ocupa horizontalmente*/
+    background-color: rgb(255, 255, 255);
+    margin: -20px auto 0px auto;
+    /* A ordem dos valores é cima, direita, baixo e esquerda*/
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    padding: 40px;
+}
+
+/*------------------------------- FORMATAÇAO DE IMAGENS COM LEGENDA -------------------------------------*/
+
+figure.foto-legenda {
+    position: relative;
+    /*Vai estabelecer uma posiçao relativa dentro do codigo html em que ele se encontra*/
+    border: 8px solid white;
+    /*Faz a borda*/
+    box-shadow: 1px 1px 4px black;
+    /*Faz o sombreamento*/
+}
+
+figure.foto-legenda img {
+    width: 100%;
+    /*Ajusta a imagem para 100% na horizontal*/
+    height: 100%;
+    /*Ajusta a imagem para 100% na vertical*/
+}
+
+figure.foto-legenda figcaption {
+    opacity: 0;
+    position: absolute;
+    /*Como é o filho do figure, ele estabelece uma posiçao */
+    top: 0px;
+    background-color: rgba(0, 0, 0, .4);
+    /*Cor do fundo da caixa*/
+    color: white;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    /*Criar um espaço maior*/
+    box-sizing: border-box;
+    /*Vai criar uma caixa*/
+    transition: opacity 1s;
+    /*Faz uma animaçao na transiçao, nesse caso de 1s*/
+}
+
+figure.foto-legenda:hover figcaption {
+    /*Ao passar o mouse em cima do figcaption (que é a imagem) vai diparar oque esta aqui dentro*/
+    opacity: 1;
+}
+
+/*------------------------------------------------ FORMATAÇÃO DO MENU ----------------------------------------------------*/
+
+nav#menu {
+    display: block;
+}
+
+nav#menu ol {
+    list-style: none;
+    /*Tira as bolinhas ou os numeros, depende do tipo*/
+    text-transform: uppercase;
+    /*Muda o texto para o uppercase*/
+    position: absolute;
+    top: -20px;
+    left: 450px;
+}
+
+nav#menu li {
+    display: inline-block;
+    /*Deixa tudo em uma linha*/
+    background-color: rgb(182, 111, 248);
+    /*Muda a cor do fundo dos botoes*/
+    padding: 10px;
+    /*Muda o tamanho dentro dos "botoes"*/
+    margin: 2px;
+    /*Muda a distancia entre os "botoes"*/
+    transition: background-color 1s;
+    /*faz a transiçao*/
+}
+
+nav#menu li:hover {
+    background-color: rgb(45, 3, 85);
+}
+
+nav#menu h1 {
+    display: none;
+    /*Esconde o menu*/
+}
+
+nav#menu a {
+    color: black;
+    text-decoration: none;
+    transition: color 1s;
+}
+
+nav#menu a:hover {
+    color: blanchedalmond;
+}
+
+/*------------------------------------------------ FORMATAÇÃO DO SECTION ----------------------------------------------------*/
+
+section#corpo {
+    display: block;
+    width: 380px;
+    float: left;
+    border-right: 1px solid rgb(0, 0, 0);
+    padding-right: 20px;
+}
+
+/*------------------------------------------------ FORMATAÇÃO DO ARTICLE ----------------------------------------------------*/
+
+article#noticia-principal h2 {
+    font-size: 12pt;
+    color: rgb(90, 1, 65);
+    background-color: rgb(208, 164, 250);
+    padding: 5px 0px 5px 10px;
+    margin: 5px;
+}
+
+header#cabecalho-artigo h1 {
+    font-family: "FonteLogo", sans-serif;
+    font-size: 21pt;
+    color: rgb(182, 111, 248);
+    text-shadow: 1px 1px 1px black;
+    margin-bottom: 0px;
+}
+
+.direita {
+    text-align: right;
+}
+
+header#cabecalho-artigo h2 {
+    font-size: 13t;
+    color: black;
+    background-color: white;
+    margin-top: -10px;
+}
+
+header#cabecalho-artigo h3 {
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+/*------------------------------------------------ FORMATAÇÃO DO ASIDE ----------------------------------------------------*/
+
+
+aside#lateral {
+    display: block;
+    width: 350px;
+    float: right;
+    background-color: rgb(226, 194, 255) ;
+    padding: 15px;
+    margin-top: 15px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5) ;
+}
+
+aside#lateral h1 {
+    font-family: "FonteLogo", sans-serif;
+    font-size: 21pt;
+    color: rgb(182, 111, 248);
+    text-shadow: 1px 1px 1px black;
+}
+
+aside#lateral h2 {
+    font-size: 12pt;
+    color: rgb(90, 1, 65);
+    background-color: rgb(208, 164, 250);
+    padding: 5px 0px 5px 10px;
+}
+
+/*------------------------------------------------ FORMATAÇÃO DO FOOTER ----------------------------------------------------*/
+
+footer#rodape {
+    clear: both;
+    border-top: 1px solid black;
+}
+
+footer#rodape p {
+    text-align: center;
+}

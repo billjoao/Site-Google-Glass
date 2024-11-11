@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tudo sobre o google Glass</title>
+    <link rel="stylesheet" href="_css/estilo.css">
+    <link rel="stylesheet" href="_css/form.css">
+
+    <script>
+        function calc_total() {
+            var qtd = parseInt(document.getElementById('iQuant').value)
+            tot = qtd * 1500
+            document.getElementById('iTot').value = tot
+        }
+    </script>
+
+</head>
+
+<body>
+    <div id="interface">
+
+        <header id="cabecalho">
+            <h1>Google Glass</h1>
+            <h2>A revolução do Google está chegando</h2>
+
+            <img id="icone" src="_imagens/multimidia.png" alt="Oculos">
+
+            <nav id="menu">
+                <h1>Menu Principal</h1>
+                <ol>
+                    <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/multimidia.png')"><a
+                            href="index.html">Home</a></li>
+                    <li onmouseover="mudaFoto('_imagens/especificacoes.png')"
+                        onmouseout="mudaFoto('_imagens/multimidia.png')"><a href="specs.html">Especificações</a>
+                    </li>
+                    <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/multimidia.png')"><a
+                            href="fotos.html">Fotos</a></li>
+                    <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('multimidia.png')"><a
+                            href="multimidia.html">Multimídia</a></li>
+                    <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/multimidia.png')">
+                        <a href="fale-conosco.html">Fale
+                            conosco</a>
+                    </li>
+                </ol>
+            </nav>
+
+        </header>
+
+        <article id="noticia-principal">
+
+            <header id="cabecalho-artigo">
+                <h3>Fale conosco > Contato</h3>
+                <h1>Formulário de contato</h1>
+                <h2>por João Eduardo</h2>
+                <h3 class="direita"> Atualizado em 01/Maio/2013</h3>
+            </header>
+
+            <form method="post" id="fContato" action="mailto:joao.eduardo0418@hotmail.com" oninput="calc_total()">
+                
+                <fieldset id="usuario">
+                    <legend>Identificação do Usuário</legend>
+                    <p><label for="cNome">Nome:</label> <input type="text" name="tNome" id="cNome" size="20"
+                            maxlength="30" placeholder="Nome completo"></p>
+                    <p><label for="cSenha">Senha:</label> <input type="password" name="tSenha" id="cSenha" size="8"
+                            maxlength="8" placeholder="8 digitos"></p>
+                    <p><label for="cMail">E-mail:</label> <input type="email" name="tMail" id="cMail" size="20"
+                            maxlength="40" placeholder="fulano@mail.com"></p>
+                    <fieldset id="sexo">
+                        <legend>Sexo:</legend>
+                        <input type="radio" name="tSexo" id="cMasc"> <label for="cMasc">Masculino</label><br>
+                        <input type="radio" name="tSexo" id="cFem"> <label for="cFem">Feminino</label>
+                    </fieldset>
+                    <p>Data de Nascimento: <input type="date" name="tDate" id="cDate"></p>
+                </fieldset>
+
+                <fieldset id="endereco">
+                    <legend>Endereço do Usuário</legend>
+                    <p><label for="iRua">Logradouro:</label> <input type="text" name="nRua" id="iRua" size="13"
+                            maxlength="30" placeholder="Rua, av"></p>
+                    <p><label for="iNum">Número:</label> <input type="number" name="nNum" id="iNum" min="0" max="99999">
+                    </p>
+                    <p><label>Estado:</label> <select name="nEst" id="iEst">
+                            <option value="RJ">Rio de janeiro</option>
+                            <option value="SP">Sao Paulo</option>
+                            <optgroup label="LOL">
+                                <option value="DM">Demacia</option>
+                                <option value="FR">Frelijord</option>
+                            </optgroup>
+                        </select></p>
+                    <p><label>Cidade:</label> <input type="text" name="nCId" id="iCid" maxlength="40" size="20"
+                            placeholder="Digite sua cidade" list="cidades"></p>
+                    <datalist id="cidades">
+                        <option value="Rio de Janeiro"></option>
+                        <option value="Nova iguaçu"></option>
+                        <option value="Niterói"></option>
+                    </datalist>
+                </fieldset>
+
+                <fieldset id="mensagem">
+                    <legend>Mensagem do Usuário</legend>
+                    <p><label>Grau de Urgência:</label> Min<input type="range" name="nGRa" id="iGra" min="0" max="10"
+                            step="2">Max</p>
+                    <p><label>Mensagem:</label> <textarea name="nMsg" id="iMsg" cols="45" rows="5"
+                            placeholder="Deixe aqui sua mesnsagem"></textarea></p>
+                </fieldset>
+
+                <fieldset id="pedido">
+                    <legend>Quero um Google Glass</legend>
+                    <p><input type="checkbox" name="nBox" id="iBox" checked>Gostaria de adquirir um Google Glass quando
+                        disponível</p>
+                    <p><label for="iCor">Cor:</label><input type="color" name="nCor" id="iCor" value="#0000FF"></p>
+                    <p><label for="iQuant">Quantidade:</label> <input type="number" name="nQuant" id="iQuant" min="0"
+                            max="5" value="0"></p>
+                    <p><label for="iTot">Preço Total: R$</label> <input type="text" name="nTot" id="iTot"
+                            placeholder="Preço" readonly></p>
+                </fieldset>
+
+                <input type="image" src="_imagens/botao-enviar.png">
+
+            </form>
+
+            <footer id="rodape">
+                <p>Copyright &copy; 2013 - by João Eduardo</p>
+                <p><a href="https://www.leagueoflegends.com/pt-br/champions/nunu/" target="_blank">Facebook</a> |
+                    <a href="https://www.leagueoflegends.com/pt-br/champions/nunu/" target="_blank">Twitter</a>
+                </p>
+            </footer>
+
+    </div>
+    <script src="_javascript/script.js"></script>
+</body>
+
+</html>
